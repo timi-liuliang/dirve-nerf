@@ -54,8 +54,8 @@ def test_a(input_fold_path, output_fold_path):
         image_registration(file_from, file_to, save_path)
 
 
-input_path = 'data/registration/input/'
-output_path = 'data/registration/output/'
+input_path = './data/image/registration/input/'
+output_path = './data/image/registration/output/'
 try:
     shutil.rmtree(output_path)
 except FileNotFoundError:
