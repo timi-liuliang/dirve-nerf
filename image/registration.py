@@ -34,7 +34,11 @@ def image_registration(file_from, file_to, save_path):
     # Save result
     cv2.imwrite(save_path, result)
 
-def test_a(input_fold_path, output_fold_path):
+def image_registration_dir(input_fold_path, output_fold_path):
+    # Make dirs
+    if not os.path.exists(output_path):
+        os.makedirs(output_path, exist_ok=True)
+
     # Array to store file paths
     file_paths = []
 
@@ -53,14 +57,7 @@ def test_a(input_fold_path, output_fold_path):
 
         image_registration(file_from, file_to, save_path)
 
-
-input_path = './data/image/registration/input/'
-output_path = './data/image/registration/output/'
-try:
-    shutil.rmtree(output_path)
-except FileNotFoundError:
-    pass
-
-os.makedirs(output_path, exist_ok=True)
-
-test_a(input_path, output_path)
+# test
+#input_path = './data/image/registration/input/'
+#output_path = './data/image/registration/output/'
+#image_registration_dir(input_path, output_path)
